@@ -67,9 +67,9 @@ export class TagCloud extends React.Component {
     const data = tags.map(tag => ({
       tag,
       color: generateColor(tag, props),
-      fontSize: fontSizeConverter(tag.count, min, max, minSize, maxSize)
+      fontSize: fontSizeConverter(tag.count, min, max, minSize, maxSize) * (tag.fontScale || 1)
     }));
-    this._data = shuffle ? arrayShuffle(data) : data;
+    this._data = data;
   }
 
 }

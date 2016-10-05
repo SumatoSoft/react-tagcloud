@@ -1,3 +1,4 @@
+import _ from 'lodash'
 /**
  * Creates new object from target excluding given properties.
  */
@@ -36,5 +37,5 @@ export const arraysEqual = (arr1, arr2) => {
   if (arr1.length !== arr2.length) {
     return false;
   }
-  return arr1.every((o, i) => o === arr2[i]);
+  return arr1.every((o, i) => _.isEqual(o, arr2[i]));
 };
